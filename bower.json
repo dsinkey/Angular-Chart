@@ -22,7 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.6",
+    "angular": "1.2.6",
     "jquery": "~1.10.2",
     "angular-mocks": "~1.2.6",
     "angular-animate": "~1.2.6",

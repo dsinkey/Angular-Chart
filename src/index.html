@@ -4,14 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Angular Bar Chart: Pure CSS</title>
-    <link rel="stylesheet/less" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
-
-<div class='container'>
-<div class='bar blue'>Blue - 50%</div>
-<div class='bar green'>Green - 80%</div>
-</div>
-
+<body ng="MyApp">
+<div>
+	<div ng-controller="BarChartCtrl">
+		<div class='bar blue'>Blue - 50%</div>
+		<div class='bar green'>Green - 80%</div>
+	</div>
+<script src="bower_componets/angular/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller.js"></script>
 </body>
 </html>
