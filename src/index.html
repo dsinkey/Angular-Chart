@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Angular Dashboard: nvd3 charts with external data point</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/nvd3/nv.d3.css">
 </head>
 <body ng-app="myApp">
-  <h1>Angular Dashboard</h1>
-  <div ng-controller="ChartCtrl">
-  	<div google-chart chart="chartObject" style="height:400px; width:100%;"></div>
-  </div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default" ng-controller="IssueCtrl">
+				<div class="panel-heading">
+					<b>Top 100 Open Issues with Assignee</b>
+				</div>
+				<div class="panel-body">
+					<div nvd3-piechart data="data" width="500" height="500" x="x()" y="y()" showLables="true" donut="true" donutLablesOutside="true"></div>
+				</div>
+			</div>
+		</div>
+	</div>
   <!--(if target dev)><!-->
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/angular/angular.js"></script>
