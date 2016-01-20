@@ -1,29 +1,21 @@
 'use strict';
-angular.module('myApp.controllers', []).controller('BarChartCtrl', function ($scope) {
-	$scope.container = {width: 300, height: 300, gap: 10};
 
-	$scope.bars = [
-		{color: 'blue', percentage: 50},
-		{color: 'orange', percentage: 60},
-		{color: 'red', percentage: 10}
-	];
+angular.module('myApp.controllers', []).controller('ChartCtrl', function ($scope) {
 
-	$scope.setContainer = function(){
-		return {
-			'padding-right': $scope.container.gap + 'px',
-			'width': $scope.container.width + 'px',
-			'height': $scope.container.height + 'px'
+	$scope.chartObject = {
+		type: 'PieChart',
+		data: {
+			"cols": [
+			  {label: "frameworks", type: "string"},
+			  {label: "shares", type: "number"}
+			],
+			"rows": [
+				{c: [{v: "Angular.js"}, {v: 54}]},
+				{c: [{v: "Backbone.js"}, {v: 9}]},
+				{c: [{v: "Ember.js"}, {v: 2}]},
+				{c: [{v: "Knockout"}, {v: 21}]},
+				{c: [{v: "Others"}, {v: 14}]}
+			]
 		}
-	};
-
-	$scope.setDetails = function(bar, index){
-		var barWidth = $scope.container.width/$scope.bars.length - $scope.container.gap;
-
-		return {
-			height: bar.percentage + '%',
-			background: bar.color,
-			width: barWidth + 'px',
-			left: $scope.container.gap + ($scope.container.gap + barWidth) * index + 'px'
-		};
 	};
 });
